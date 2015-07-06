@@ -20,9 +20,9 @@ public class PagerHolder extends FragmentActivity {
         viewPager.setAdapter(new PagerAdapter(getSupportFragmentManager(),
                 PagerHolder.this));
 
-        // Give the TabLayout the ViewPager
+        // Give the TabLayout the ViewPager (material)
         TabLayout tabLayout = (TabLayout) findViewById(R.id.sliding_tabs);
-        tabLayout.setTabTextColors(getResources().getColor(R.color.background_floating_material_light), Color.BLACK);
+        tabLayout.setTabTextColors(Color.DKGRAY, Color.BLACK);
         tabLayout.setupWithViewPager(viewPager);
     }
 }
