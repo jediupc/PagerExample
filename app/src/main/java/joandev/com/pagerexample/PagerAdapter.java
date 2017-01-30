@@ -1,7 +1,6 @@
 package joandev.com.pagerexample;
 
 import android.support.v4.app.Fragment;
-import android.content.Context;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
@@ -9,25 +8,22 @@ import android.support.v4.app.FragmentPagerAdapter;
 public class PagerAdapter extends FragmentPagerAdapter {
 
 
-    final int PAGE_COUNT = 2;
     private String tabTitles[] = new String[] { "Memory", "Ranking" };
-    private Context context;
-    Fragment tab = null;
+    private Fragment tab = null;
 
     //creadora
-    public PagerAdapter(FragmentManager fm, Context context) {
+    PagerAdapter(FragmentManager fm) {
         super(fm);
-        this.context = context;
     }
 
 
     //crea las tabas, siempre tiene que retornar con el numero de tabs que queremos mostrar
     @Override
     public int getCount() {
-        return PAGE_COUNT;
+        return tabTitles.length;
     }
 
-    //Lanza el fragment asociado con el numero de tab
+    //Lanza el fragment asociado con el número de tab
     @Override
     public Fragment getItem(int position) {
         switch(position) {
@@ -44,7 +40,7 @@ public class PagerAdapter extends FragmentPagerAdapter {
     //pone el nombre en cada tab
     @Override
     public CharSequence getPageTitle(int position) {
-        // Generate title based on item position
+        // Genera le título en función de la posición
         return tabTitles[position];
     }
 }
